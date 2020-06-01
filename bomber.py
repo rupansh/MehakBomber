@@ -3,14 +3,17 @@ import socket
 import platform
 import os
 import time
+import pip
 
 try:
     import requests
 except ImportError:
     print('Some dependencies are not installed, wait while they are automatically installed...')
-    os.system('python -m pip install requests')
+    pip.main(["install", "--user", "requests"])
+    import requests
 
-#default country code for India.
+
+# default country code for India.
 country_code = '91'
 
 def internet_check():
