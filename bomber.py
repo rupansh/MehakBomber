@@ -1,9 +1,14 @@
-import requests
 import random
 import socket
 import platform
 import os
 import time
+
+try:
+    import requests
+except ImportError:
+    print('Some dependencies are not installed, wait while they are automatically installed...')
+    os.system('python -m pip install requests')
 
 #default country code for India.
 country_code = '91'
@@ -373,6 +378,7 @@ if not internet_check():
     print('''your internet doesn't seem to be working. Exiting...''')
     exit(1)
 
+clrscr()
 num = int(input('Enter the phone number of the target: +91 '))
 lim = int(input("Enter the limit of SMS(0 for infinite): "))
 delay = int(input('enter the delay in seconds(recommended: 2 secs): '))
