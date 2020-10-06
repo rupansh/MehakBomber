@@ -45,6 +45,7 @@ class LensKart(SmsApiInterface):
         return super().send(cc, num)
 
 
+@sms_api_impl
 class LensKart2(SmsApiInterface):
     def __init__(self):
         headers = {
